@@ -18,3 +18,13 @@ header{position:sticky;top:0;z-index:20;background:#f6f2ebee;backdrop-filter:blu
 footer{background:#111;color:#fff;padding:60px 30px}.foot{max-width:1400px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:35px}.foot h3{font:500 32px "Playfair Display";margin-top:0}.foot h4{font:10px "DM Mono";letter-spacing:.1em}.foot a,.foot p{color:#bbb;font-size:12px;line-height:2;display:block}.copy{text-align:center;color:#666;font:9px "DM Mono";border-top:1px solid #333;padding-top:22px;margin-top:45px}
 .dash{max-width:1400px;margin:auto;padding:45px 25px}.dashGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric{background:#fff;border:1px solid var(--line);padding:20px}.metric small{font:9px "DM Mono";color:#777}.metric b{display:block;font:30px "Playfair Display";margin-top:8px}.table{margin-top:20px;background:#fff;border:1px solid var(--line);overflow:auto}.table table{width:100%;border-collapse:collapse;min-width:700px}.table th,.table td{padding:15px;border-bottom:1px solid var(--line);text-align:left;font-size:12px}.table th{font:9px "DM Mono";text-transform:uppercase}
 @media(max-width:800px){.nav{height:72px;display:flex;justify-content:space-between}.links{display:none}.hamb{display:block;font-size:22px}.hero{grid-template-columns:1fr}.heroText{padding:65px 25px}.heroImage{min-height:430px}.strip{grid-template-columns:2fr 2fr}.categories,.products{grid-template-columns:repeat(2,1fr)}.editorial{grid-template-columns:1fr}.editorialArt{min-height:330px}.grid2,.pay{grid-template-columns:1fr}.foot{grid-template-columns:1fr 1fr}.head h2{font-size:36px}.hero h1{font-size:78px}}
+
+/* Product photography */
+.photo:after{display:none}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.productGallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.productGallery img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#fff;display:block}
+.productMeta{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:22px 0;font:11px "DM Mono"}
+.productMeta div{border-top:1px solid var(--line);padding:12px 0}
+.stock{font:10px "DM Mono";text-transform:uppercase;letter-spacing:.08em}
+@media(max-width:800px){.productGallery{grid-template-columns:1fr 1fr}.productGallery img:first-child{grid-column:1/-1}}
