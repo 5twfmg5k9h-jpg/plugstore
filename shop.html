@@ -4,314 +4,322 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shop | PLUGSTORE</title>
+<title>Boutique | PLUGSTORE</title>
 
 <style>
 *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f7f5f0;
-    color:#111;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f7f5f0;
+  color:#111;
 }
 
 a{
-    color:inherit;
-    text-decoration:none;
+  color:inherit;
+  text-decoration:none;
 }
 
-/* NAVIGATION */
-
 header{
-    border-bottom:1px solid #111;
-    background:#f7f5f0;
-    position:sticky;
-    top:0;
-    z-index:20;
+  border-bottom:1px solid #ddd;
+  background:#f7f5f0;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
 .nav{
-    max-width:1400px;
-    margin:auto;
-    height:90px;
-    padding:0 30px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+  max-width:1400px;
+  margin:auto;
+  height:80px;
+  padding:0 25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .logo{
-    font-size:26px;
-    font-weight:900;
-    letter-spacing:-1px;
-    text-align:center;
-}
-
-.micro{
-    font-size:8px;
-    letter-spacing:3px;
-    text-align:center;
-    margin-top:4px;
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:-1px;
 }
 
 .links{
-    display:flex;
-    gap:25px;
-    font-size:12px;
-    text-transform:uppercase;
+  display:flex;
+  gap:22px;
+  align-items:center;
+  font-size:12px;
+  text-transform:uppercase;
 }
 
-.hamb{
-    display:none;
+.bag{
+  border:1px solid #111;
+  padding:10px 14px;
+  border-radius:25px;
 }
-
-/* HERO */
 
 .hero{
-    max-width:1400px;
-    margin:auto;
-    padding:70px 30px 45px;
+  max-width:1400px;
+  margin:auto;
+  padding:70px 25px 50px;
 }
 
-.hero small{
-    font-size:10px;
-    letter-spacing:2px;
+.hero-label{
+  font-size:10px;
+  letter-spacing:3px;
 }
 
 .hero h1{
-    font-size:clamp(55px,9vw,130px);
-    line-height:.85;
-    letter-spacing:-6px;
-    margin-top:15px;
+  font-size:clamp(60px,10vw,130px);
+  line-height:.82;
+  letter-spacing:-7px;
+  margin-top:15px;
 }
 
 .hero p{
-    max-width:430px;
-    margin-top:25px;
-    font-size:14px;
-    line-height:1.6;
+  max-width:500px;
+  margin-top:25px;
+  line-height:1.6;
+  color:#666;
+  font-size:14px;
 }
 
-/* FILTRES */
-
-.filters{
-    max-width:1400px;
-    margin:auto;
-    padding:20px 30px;
-    border-top:1px solid #111;
-    border-bottom:1px solid #111;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+.toolbar{
+  max-width:1400px;
+  margin:auto;
+  padding:20px 25px;
+  border-top:1px solid #111;
+  border-bottom:1px solid #111;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.filters span{
-    font-size:11px;
-    letter-spacing:1px;
+.toolbar span{
+  font-size:11px;
+  letter-spacing:1px;
 }
 
-select{
-    border:1px solid #111;
-    background:#f7f5f0;
-    padding:10px 14px;
+.toolbar select{
+  padding:10px 14px;
+  background:#f7f5f0;
+  border:1px solid #111;
 }
-
-/* PRODUITS */
 
 .products{
-    max-width:1400px;
-    margin:45px auto 100px;
-    padding:0 30px;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
+  max-width:1400px;
+  margin:50px auto 100px;
+  padding:0 25px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
 }
 
 .product{
-    position:relative;
+  position:relative;
 }
 
 .product-image{
-    height:520px;
-    background:#ded9d0;
-    overflow:hidden;
-    position:relative;
+  height:500px;
+  background:#dedbd4;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
 }
 
 .product-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.no-image{
+  color:#777;
+  font-size:10px;
+  letter-spacing:2px;
 }
 
 .badge{
-    position:absolute;
-    top:15px;
-    left:15px;
-    background:#111;
-    color:white;
-    padding:9px 12px;
-    font-size:9px;
-    letter-spacing:1px;
-    z-index:2;
+  position:absolute;
+  top:12px;
+  left:12px;
+  z-index:2;
+  padding:8px 11px;
+  background:#111;
+  color:#fff;
+  font-size:9px;
+  letter-spacing:1px;
 }
 
 .badge.out{
-    background:#d90000;
+  background:#d00000;
 }
 
 .product-info{
-    padding:15px 0 35px;
+  padding:15px 0 35px;
 }
 
 .product-name{
-    font-size:15px;
-    font-weight:bold;
+  font-size:15px;
+  font-weight:bold;
 }
 
-.product-meta{
-    display:flex;
-    justify-content:space-between;
-    margin-top:7px;
-    font-size:12px;
+.product-details{
+  display:flex;
+  justify-content:space-between;
+  margin-top:8px;
+  font-size:12px;
 }
 
 .price{
-    font-weight:bold;
+  font-weight:bold;
 }
 
-.status{
-    color:#777;
+.stock{
+  color:#777;
 }
 
-.status.out{
-    color:#d00000;
-    font-weight:bold;
+.stock.out{
+  color:#d00000;
+  font-weight:bold;
 }
 
-.product button{
-    width:100%;
-    margin-top:15px;
-    padding:14px;
-    border:1px solid #111;
-    background:#111;
-    color:white;
-    cursor:pointer;
-    font-size:11px;
-    letter-spacing:1px;
-    text-transform:uppercase;
+.product-button{
+  width:100%;
+  margin-top:15px;
+  padding:14px;
+  border:1px solid #111;
+  background:#111;
+  color:#fff;
+  cursor:pointer;
+  font-size:10px;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
 
-.product button:hover{
-    background:#333;
+.product-button:hover{
+  opacity:.8;
 }
 
-.product button:disabled{
-    background:#ccc;
-    color:#666;
-    border-color:#ccc;
-    cursor:not-allowed;
+.product-button:disabled{
+  background:#ccc;
+  color:#777;
+  border-color:#ccc;
+  cursor:not-allowed;
 }
-
-/* FOOTER */
 
 footer{
-    border-top:1px solid #111;
-    padding:50px 30px;
+  background:#111;
+  color:#fff;
+  padding:55px 25px;
 }
 
 .footer{
-    max-width:1400px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:30px;
+  max-width:1400px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:30px;
 }
 
 .footer h3{
-    font-size:22px;
+  font-size:24px;
 }
 
 .footer h4{
-    font-size:10px;
-    letter-spacing:2px;
-    margin-bottom:12px;
+  font-size:10px;
+  letter-spacing:2px;
+  margin-bottom:12px;
 }
 
 .footer p,
 .footer a{
-    font-size:11px;
-    line-height:1.7;
+  color:#aaa;
+  font-size:12px;
+  line-height:2;
 }
 
-/* MOBILE */
+@media(max-width:800px){
 
-@media(max-width:700px){
+  .links{
+    gap:10px;
+    font-size:10px;
+  }
 
-    .nav{
-        height:70px;
-        padding:0 18px;
-    }
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+  }
 
-    .hamb{
-        display:block;
-        font-size:20px;
-    }
+  .product-image{
+    height:330px;
+  }
 
-    .links{
-        display:none;
-    }
+  .footer{
+    grid-template-columns:1fr 1fr;
+  }
+}
 
-    .logo{
-        font-size:21px;
-    }
+@media(max-width:550px){
 
-    .hero{
-        padding:50px 18px 35px;
-    }
+  .nav{
+    height:70px;
+    padding:0 18px;
+  }
 
-    .hero h1{
-        font-size:65px;
-        letter-spacing:-4px;
-    }
+  .logo{
+    font-size:20px;
+  }
 
-    .filters{
-        padding:15px 18px;
-    }
+  .links a:first-child{
+    display:none;
+  }
 
-    .products{
-        padding:0 18px;
-        grid-template-columns:1fr 1fr;
-        gap:14px;
-        margin-top:30px;
-    }
+  .hero{
+    padding:50px 18px 40px;
+  }
 
-    .product-image{
-        height:300px;
-    }
+  .hero h1{
+    font-size:65px;
+    letter-spacing:-4px;
+  }
 
-    .product-name{
-        font-size:12px;
-    }
+  .toolbar{
+    padding:15px 18px;
+  }
 
-    .product-meta{
-        display:block;
-        line-height:1.6;
-    }
+  .products{
+    padding:0 18px;
+    margin-top:30px;
+    gap:12px;
+  }
 
-    .product button{
-        font-size:9px;
-        padding:12px 5px;
-    }
+  .product-image{
+    height:250px;
+  }
 
-    .footer{
-        grid-template-columns:1fr 1fr;
-    }
+  .product-name{
+    font-size:12px;
+  }
+
+  .product-details{
+    display:block;
+    line-height:1.7;
+  }
+
+  .product-button{
+    font-size:8px;
+    padding:12px 5px;
+  }
+
+  .footer{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -319,287 +327,287 @@ footer{
 <body>
 
 <header>
-    <div class="nav">
 
-        <div class="hamb">☰</div>
+<nav class="nav">
 
-        <div class="links">
-            <a href="index.html">Accueil</a>
-            <a href="shop.html">Shop</a>
-        </div>
+<a href="index.html" class="logo">
+PLUGSTORE
+</a>
 
-        <a href="index.html">
-            <div class="logo">PLUGSTORE</div>
-            <div class="micro">CURATED FASHION</div>
-        </a>
+<div class="links">
+<a href="index.html">Accueil</a>
+<a href="boutique.html">Boutique</a>
 
-        <div class="links">
-            <a href="#">♡</a>
-            <a href="checkout.html">Bag (0)</a>
-        </div>
+<a href="checkout.html" class="bag">
+Panier (<span id="cartCount">0</span>)
+</a>
+</div>
 
-    </div>
+</nav>
+
 </header>
 
 
 <main>
 
 <section class="hero">
-    <small>PLUGSTORE / COLLECTION</small>
 
-    <h1>THE<br>SHOP</h1>
+<div class="hero-label">
+PLUGSTORE / COLLECTION 001
+</div>
 
-    <p>
-        Une sélection de pièces uniques,
-        soigneusement choisies pour PLUGSTORE.
-        Chaque pièce peut disparaître à tout moment.
-    </p>
+<h1>SHOP</h1>
+
+<p>
+Découvrez les pièces sélectionnées par PLUGSTORE.
+Chaque article est disponible en quantité limitée.
+</p>
+
 </section>
 
 
-<div class="filters">
+<div class="toolbar">
 
-    <span>COLLECTION / 06 PIECES</span>
+<span>COLLECTION PLUGSTORE</span>
 
-    <select>
-        <option>TRIER PAR</option>
-        <option>Nouveautés</option>
-        <option>Prix croissant</option>
-        <option>Prix décroissant</option>
-    </select>
+<select id="sort">
+<option value="new">Nouveautés</option>
+<option value="low">Prix croissant</option>
+<option value="high">Prix décroissant</option>
+</select>
 
 </div>
 
 
-<section class="products">
+<section class="products" id="products">
 
 
 <!-- PRODUIT 1 -->
 
-<article class="product">
+<article class="product" data-price="3500">
 
-    <div class="product-image">
+<div class="badge">
+DISPONIBLE
+</div>
 
-        <span class="badge">NEW</span>
+<div class="product-image">
 
-        <img src="produit-1-1.jpeg" alt="Produit 1">
+<div class="no-image">
+PHOTO PRODUIT 01
+</div>
 
-    </div>
+</div>
 
-    <div class="product-info">
+<div class="product-info">
 
-        <div class="product-name">
-            PLUG ARCHIVE 001
-        </div>
+<div class="product-name">
+Corset blanc rayé
+</div>
 
-        <div class="product-meta">
+<div class="product-details">
 
-            <span class="price">
-                12 000 FCFA
-            </span>
+<span class="price">
+3 500 FCFA
+</span>
 
-            <span class="status">
-                Disponible
-            </span>
+<span class="stock">
+Disponible
+</span>
 
-        </div>
+</div>
 
-        <button onclick="addToBag('PLUG ARCHIVE 001',12000)">
-            Ajouter au panier
-        </button>
+<button
+class="product-button"
+onclick="addToCart('Corset blanc rayé',3500)"
+>
+Ajouter au panier
+</button>
 
-    </div>
+</div>
 
 </article>
 
 
 <!-- PRODUIT 2 -->
 
-<article class="product">
+<article class="product" data-price="3500">
 
-    <div class="product-image">
+<div class="badge">
+DISPONIBLE
+</div>
 
-        <span class="badge">ARCHIVE</span>
+<div class="product-image">
 
-        <img src="produit-2-1.jpeg" alt="Produit 2">
+<div class="no-image">
+PHOTO PRODUIT 02
+</div>
 
-    </div>
+</div>
 
-    <div class="product-info">
+<div class="product-info">
 
-        <div class="product-name">
-            PLUG ARCHIVE 002
-        </div>
+<div class="product-name">
+Corset Baddies
+</div>
 
-        <div class="product-meta">
+<div class="product-details">
 
-            <span class="price">
-                15 000 FCFA
-            </span>
+<span class="price">
+3 500 FCFA
+</span>
 
-            <span class="status">
-                Disponible
-            </span>
+<span class="stock">
+Disponible
+</span>
 
-        </div>
+</div>
 
-        <button onclick="addToBag('PLUG ARCHIVE 002',15000)">
-            Ajouter au panier
-        </button>
+<button
+class="product-button"
+onclick="addToCart('Corset Baddies',3500)"
+>
+Ajouter au panier
+</button>
 
-    </div>
+</div>
 
 </article>
 
 
 <!-- PRODUIT 3 -->
 
-<article class="product">
+<article class="product" data-price="3500">
 
-    <div class="product-image">
+<div class="badge">
+DISPONIBLE
+</div>
 
-        <span class="badge">LIMITED</span>
+<div class="product-image">
 
-        <img src="produit-3-1.jpeg" alt="Produit 3">
+<div class="no-image">
+PHOTO PRODUIT 03
+</div>
 
-    </div>
+</div>
 
-    <div class="product-info">
+<div class="product-info">
 
-        <div class="product-name">
-            PLUG ARCHIVE 003
-        </div>
+<div class="product-name">
+Corset noir rayé
+</div>
 
-        <div class="product-meta">
+<div class="product-details">
 
-            <span class="price">
-                18 000 FCFA
-            </span>
+<span class="price">
+3 500 FCFA
+</span>
 
-            <span class="status">
-                Disponible
-            </span>
+<span class="stock">
+Disponible
+</span>
 
-        </div>
+</div>
 
-        <button onclick="addToBag('PLUG ARCHIVE 003',18000)">
-            Ajouter au panier
-        </button>
+<button
+class="product-button"
+onclick="addToCart('Corset noir rayé',3500)"
+>
+Ajouter au panier
+</button>
 
-    </div>
+</div>
 
 </article>
 
 
 <!-- PRODUIT 4 -->
 
-<article class="product">
+<article class="product" data-price="2500">
 
-    <div class="product-image">
+<div class="badge">
+DISPONIBLE
+</div>
 
-        <img src="produit-4-1.png" alt="Produit 4">
+<div class="product-image">
 
-    </div>
+<div class="no-image">
+PHOTO PRODUIT 04
+</div>
 
-    <div class="product-info">
+</div>
 
-        <div class="product-name">
-            PLUG ARCHIVE 004
-        </div>
+<div class="product-info">
 
-        <div class="product-meta">
+<div class="product-name">
+Corset Zara
+</div>
 
-            <span class="price">
-                20 000 FCFA
-            </span>
+<div class="product-details">
 
-            <span class="status">
-                Disponible
-            </span>
+<span class="price">
+2 500 FCFA
+</span>
 
-        </div>
+<span class="stock">
+Disponible
+</span>
 
-        <button onclick="addToBag('PLUG ARCHIVE 004',20000)">
-            Ajouter au panier
-        </button>
+</div>
 
-    </div>
+<button
+class="product-button"
+onclick="addToCart('Corset Zara',2500)"
+>
+Ajouter au panier
+</button>
+
+</div>
 
 </article>
 
 
 <!-- PRODUIT 5 -->
 
-<article class="product">
+<article class="product" data-price="3000">
 
-    <div class="product-image">
+<div class="badge">
+DISPONIBLE
+</div>
 
-        <img src="produit-5-1.jpeg" alt="Produit 5">
+<div class="product-image">
 
-    </div>
+<div class="no-image">
+PHOTO PRODUIT 05
+</div>
 
-    <div class="product-info">
+</div>
 
-        <div class="product-name">
-            PLUG ARCHIVE 005
-        </div>
+<div class="product-info">
 
-        <div class="product-meta">
+<div class="product-name">
+Corset fleuri noir
+</div>
 
-            <span class="price">
-                22 000 FCFA
-            </span>
+<div class="product-details">
 
-            <span class="status">
-                Disponible
-            </span>
+<span class="price">
+3 000 FCFA
+</span>
 
-        </div>
+<span class="stock">
+Disponible
+</span>
 
-        <button onclick="addToBag('PLUG ARCHIVE 005',22000)">
-            Ajouter au panier
-        </button>
+</div>
 
-    </div>
+<button
+class="product-button"
+onclick="addToCart('Corset fleuri noir',3000)"
+>
+Ajouter au panier
+</button>
 
-</article>
-
-
-<!-- PRODUIT 6 -->
-
-<article class="product">
-
-    <div class="product-image">
-
-        <span class="badge out">RUPTURE</span>
-
-        <img src="produit-1-2.jpeg" alt="Produit 6">
-
-    </div>
-
-    <div class="product-info">
-
-        <div class="product-name">
-            PLUG ARCHIVE 006
-        </div>
-
-        <div class="product-meta">
-
-            <span class="price">
-                25 000 FCFA
-            </span>
-
-            <span class="status out">
-                RUPTURE DE STOCK
-            </span>
-
-        </div>
-
-        <button disabled>
-            Rupture de stock
-        </button>
-
-    </div>
+</div>
 
 </article>
 
@@ -613,25 +621,27 @@ footer{
 
 <div class="footer">
 
-    <div>
-        <h3>PLUGSTORE</h3>
-        <p>Curated fashion. Unique pieces.</p>
-    </div>
+<div>
+<h3>PLUGSTORE</h3>
+<p>Curated fashion.<br>Unique pieces.</p>
+</div>
 
-    <div>
-        <h4>SHOP</h4>
-        <a href="shop.html">Collection</a>
-    </div>
+<div>
+<h4>SHOP</h4>
+<a href="boutique.html">Boutique</a>
+</div>
 
-    <div>
-        <h4>PAYMENT</h4>
-        <p>Wave · Orange Money</p>
-    </div>
+<div>
+<h4>PAIEMENT</h4>
+<p>Wave</p>
+<p>Orange Money</p>
+</div>
 
-    <div>
-        <h4>DELIVERY</h4>
-        <p>Abidjan & Côte d'Ivoire</p>
-    </div>
+<div>
+<h4>LIVRAISON</h4>
+<p>Abidjan</p>
+<p>Côte d'Ivoire</p>
+</div>
 
 </div>
 
@@ -640,20 +650,82 @@ footer{
 
 <script>
 
-function addToBag(name, price){
+let cart =
+JSON.parse(localStorage.getItem("plugstore_cart")) || [];
 
-    let bag = JSON.parse(localStorage.getItem("plugstoreBag")) || [];
 
-    bag.push({
-        name:name,
-        price:price
-    });
+function updateCartCount(){
 
-    localStorage.setItem("plugstoreBag",JSON.stringify(bag));
-
-    alert(name + " ajouté au panier 🛍️");
+document.getElementById("cartCount").textContent =
+cart.length;
 
 }
+
+
+function addToCart(name,price){
+
+cart.push({
+name:name,
+price:price,
+quantity:1
+});
+
+localStorage.setItem(
+"plugstore_cart",
+JSON.stringify(cart)
+);
+
+updateCartCount();
+
+alert("Article ajouté au panier 🛍️");
+
+}
+
+
+document
+.getElementById("sort")
+.addEventListener("change",function(){
+
+let products =
+Array.from(document.querySelectorAll(".product"));
+
+let container =
+document.getElementById("products");
+
+if(this.value === "low"){
+
+products.sort(function(a,b){
+
+return Number(a.dataset.price)
+-
+Number(b.dataset.price);
+
+});
+
+}
+
+if(this.value === "high"){
+
+products.sort(function(a,b){
+
+return Number(b.dataset.price)
+-
+Number(a.dataset.price);
+
+});
+
+}
+
+products.forEach(function(product){
+
+container.appendChild(product);
+
+});
+
+});
+
+
+updateCartCount();
 
 </script>
 
