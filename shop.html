@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shop | PLUGSTORE</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:#f7f5f0;
+    color:#111;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+header{
+    border-bottom:1px solid #ddd;
+    position:sticky;
+    top:0;
+    background:#f7f5f0ee;
+    backdrop-filter:blur(15px);
+    z-index:10;
+}
+
+.nav{
+    max-width:1400px;
+    margin:auto;
+    height:75px;
+    padding:0 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+}
+
+.navlinks{
+    display:flex;
+    gap:25px;
+    align-items:center;
+    font-size:13px;
+}
+
+.bag{
+    border:1px solid #111;
+    padding:10px 15px;
+    border-radius:30px;
+}
+
+.wrap{
+    max-width:1400px;
+    margin:auto;
+    padding:70px 30px;
+}
+
+.top{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:45px;
+}
+
+.top h1{
+    font-size:65px;
+    letter-spacing:-4px;
+}
+
+.top p{
+    color:#777;
+    font-size:13px;
+}
+
+.tools{
+    display:flex;
+    gap:10px;
+    margin-bottom:35px;
+}
+
+.search{
+    flex:1;
+    padding:15px;
+    border:1px solid #ccc;
+    background:white;
+    outline:none;
+}
+
+select{
+    padding:15px;
+    border:1px solid #ccc;
+    background:white;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product{
+    position:relative;
+}
+
+.image{
+    height:430px;
+    background:#dedbd4;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#777;
+    font-size:11px;
+    letter-spacing:2px;
+}
+
+.badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#111;
+    color:white;
+    padding:7px 10px;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+.badge.out{
+    background:#b00020;
+}
+
+.info{
+    padding:15px 2px;
+}
+
+.info h3{
+    font-size:14px;
+    margin-bottom:7px;
+}
+
+.info p{
+    color:#555;
+    font-size:13px;
+}
+
+.product button{
+    width:100%;
+    margin-top:12px;
+    padding:13px;
+    border:1px solid #111;
+    background:#111;
+    color:white;
+    cursor:pointer;
+}
+
+.product button:disabled{
+    background:#ddd;
+    color:#777;
+    border-color:#ddd;
+    cursor:not-allowed;
+}
+
+.empty{
+    display:none;
+    padding:80px 20px;
+    text-align:center;
+    color:#777;
+}
+
+footer{
+    background:#111;
+    color:white;
+    padding:60px 30px;
+    margin-top:60px;
+}
+
+.footer{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+}
+
+.footer h3{
+    font-size:25px;
+}
+
+.footer h4{
+    font-size:11px;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.footer p,
+.footer a{
+    color:#aaa;
+    font-size:13px;
+    line-height:2;
+}
+
+@media(max-width:900px){
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .image{
+        height:330px;
+    }
+
+    .top h1{
+        font-size:50px;
+    }
+
+    .footer{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .nav{
+        padding:0 18px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .navlinks{
+        gap:10px;
+        font-size:11px;
+    }
+
+    .wrap{
+        padding:45px 18px;
+    }
+
+    .top{
+        display:block;
+    }
+
+    .top h1{
+        font-size:45px;
+        margin-bottom:10px;
+    }
+
+    .tools{
+        flex-direction:column;
+    }
+
+    .products{
+        gap:12px;
+    }
+
+    .image{
+        height:240px;
+    }
+
+    .footer{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<nav class="nav">
+
+<a href="index.html" class="logo">
+PLUGSTORE
+</a>
+
+<div class="navlinks">
+<a href="index.html">ACCUEIL</a>
+<a href="shop.html">SHOP</a>
+<a href="checkout.html" class="bag">
+BAG (<span id="bagCount">0</span>)
+</a>
+</div>
+
+</nav>
+
+</header>
+
+
+<main class="wrap">
+
+<div class="top">
+
+<div>
+<p>PLUGSTORE / 001</p>
+<h1>SHOP</h1>
+</div>
+
+<p>
+CURATED FASHION<br>
+ABIDJAN · CÔTE D'IVOIRE
+</p>
+
+</div>
+
+
+<div class="tools">
+
+<input
+type="text"
+id="search"
+class="search"
+placeholder="Rechercher une pièce..."
+>
+
+<select id="filter">
+<option value="all">Toutes les pièces</option>
+<option value="available">Disponibles</option>
+<option value="out">Rupture de stock</option>
+</select>
+
+</div>
+
+
+<div class="products" id="products">
+
+
+<div class="product" data-name="Plug Piece 001" data-status="available">
+
+<div class="badge">
+AVAILABLE
+</div>
+
+<div class="image">
+PRODUCT IMAGE 01
+</div>
+
+<div class="info">
+<h3>PLUG PIECE 001</h3>
+<p>12 000 FCFA</p>
+
+<button onclick="addToCart('PLUG PIECE 001',12000)">
+AJOUTER AU PANIER →
+</button>
+</div>
+
+</div>
+
+
+<div class="product" data-name="Plug Piece 002" data-status="available">
+
+<div class="badge">
+AVAILABLE
+</div>
+
+<div class="image">
+PRODUCT IMAGE 02
+</div>
+
+<div class="info">
+<h3>PLUG PIECE 002</h3>
+<p>15 000 FCFA</p>
+
+<button onclick="addToCart('PLUG PIECE 002',15000)">
+AJOUTER AU PANIER →
+</button>
+</div>
+
+</div>
+
+
+<div class="product" data-name="Plug Piece 003" data-status="out">
+
+<div class="badge out">
+RUPTURE
+</div>
+
+<div class="image">
+PRODUCT IMAGE 03
+</div>
+
+<div class="info">
+<h3>PLUG PIECE 003</h3>
+<p>18 000 FCFA</p>
+
+<button disabled>
+RUPTURE DE STOCK
+</button>
+</div>
+
+</div>
+
+
+<div class="product" data-name="Plug Piece 004" data-status="available">
+
+<div class="badge">
+AVAILABLE
+</div>
+
+<div class="image">
+PRODUCT IMAGE 04
+</div>
+
+<div class="info">
+<h3>PLUG PIECE 004</h3>
+<p>20 000 FCFA</p>
+
+<button onclick="addToCart('PLUG PIECE 004',20000)">
+AJOUTER AU PANIER →
+</button>
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="empty" id="empty">
+Aucune pièce trouvée.
+</div>
+
+</main>
+
+
+<footer>
+
+<div class="footer">
+
+<div>
+<h3>PLUGSTORE</h3>
+<p>Curated fashion.<br>Unique pieces.</p>
+</div>
+
+<div>
+<h4>SHOP</h4>
+<a href="shop.html">Collection</a><br>
+<a href="index.html">Accueil</a>
+</div>
+
+<div>
+<h4>PAYMENT</h4>
+<p>Wave</p>
+<p>Orange Money</p>
+</div>
+
+<div>
+<h4>DELIVERY</h4>
+<p>Abidjan</p>
+<p>Côte d'Ivoire</p>
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+let cart =
+JSON.parse(localStorage.getItem("plugstore_cart")) || [];
+
+function updateBag(){
+
+document.getElementById("bagCount").textContent =
+cart.length;
+
+}
+
+function addToCart(name,price){
+
+cart.push({
+name:name,
+price:price
+});
+
+localStorage.setItem(
+"plugstore_cart",
+JSON.stringify(cart)
+);
+
+updateBag();
+
+alert("Produit ajouté au panier");
+
+}
+
+const search =
+document.getElementById("search");
+
+const filter =
+document.getElementById("filter");
+
+const products =
+document.querySelectorAll(".product");
+
+const empty =
+document.getElementById("empty");
+
+function filterProducts(){
+
+let text =
+search.value.toLowerCase();
+
+let status =
+filter.value;
+
+let visible = 0;
+
+products.forEach(product => {
+
+let name =
+product.dataset.name.toLowerCase();
+
+let productStatus =
+product.dataset.status;
+
+let matchName =
+name.includes(text);
+
+let matchStatus =
+status === "all" ||
+status === productStatus;
+
+if(matchName && matchStatus){
+
+product.style.display = "";
+
+visible++;
+
+}else{
+
+product.style.display = "none";
+
+}
+
+});
+
+empty.style.display =
+visible === 0 ? "block" : "none";
+
+}
+
+search.addEventListener(
+"input",
+filterProducts
+);
+
+filter.addEventListener(
+"change",
+filterProducts
+);
+
+updateBag();
+
+</script>
+
+</body>
+</html>
