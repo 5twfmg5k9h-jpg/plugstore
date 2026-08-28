@@ -14,9 +14,9 @@
 }
 
 body{
+    font-family:Arial,Helvetica,sans-serif;
     background:#f7f5f0;
     color:#111;
-    font-family:Arial,Helvetica,sans-serif;
 }
 
 a{
@@ -24,165 +24,205 @@ a{
     text-decoration:none;
 }
 
+/* NAVIGATION */
+
 header{
-    border-bottom:1px solid #ddd;
+    border-bottom:1px solid #111;
+    background:#f7f5f0;
     position:sticky;
     top:0;
-    background:#f7f5f0ee;
-    backdrop-filter:blur(15px);
-    z-index:10;
+    z-index:20;
 }
 
 .nav{
     max-width:1400px;
     margin:auto;
-    height:75px;
+    height:90px;
     padding:0 30px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-    font-size:25px;
+    font-size:26px;
     font-weight:900;
+    letter-spacing:-1px;
+    text-align:center;
 }
 
-.navlinks{
+.micro{
+    font-size:8px;
+    letter-spacing:3px;
+    text-align:center;
+    margin-top:4px;
+}
+
+.links{
     display:flex;
     gap:25px;
-    align-items:center;
-    font-size:13px;
+    font-size:12px;
+    text-transform:uppercase;
 }
 
-.bag{
-    border:1px solid #111;
-    padding:10px 15px;
-    border-radius:30px;
+.hamb{
+    display:none;
 }
 
-.wrap{
+/* HERO */
+
+.hero{
     max-width:1400px;
     margin:auto;
-    padding:70px 30px;
+    padding:70px 30px 45px;
 }
 
-.top{
+.hero small{
+    font-size:10px;
+    letter-spacing:2px;
+}
+
+.hero h1{
+    font-size:clamp(55px,9vw,130px);
+    line-height:.85;
+    letter-spacing:-6px;
+    margin-top:15px;
+}
+
+.hero p{
+    max-width:430px;
+    margin-top:25px;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* FILTRES */
+
+.filters{
+    max-width:1400px;
+    margin:auto;
+    padding:20px 30px;
+    border-top:1px solid #111;
+    border-bottom:1px solid #111;
     display:flex;
     justify-content:space-between;
-    align-items:end;
-    margin-bottom:45px;
+    align-items:center;
 }
 
-.top h1{
-    font-size:65px;
-    letter-spacing:-4px;
-}
-
-.top p{
-    color:#777;
-    font-size:13px;
-}
-
-.tools{
-    display:flex;
-    gap:10px;
-    margin-bottom:35px;
-}
-
-.search{
-    flex:1;
-    padding:15px;
-    border:1px solid #ccc;
-    background:white;
-    outline:none;
+.filters span{
+    font-size:11px;
+    letter-spacing:1px;
 }
 
 select{
-    padding:15px;
-    border:1px solid #ccc;
-    background:white;
+    border:1px solid #111;
+    background:#f7f5f0;
+    padding:10px 14px;
 }
 
+/* PRODUITS */
+
 .products{
+    max-width:1400px;
+    margin:45px auto 100px;
+    padding:0 30px;
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
 
 .product{
     position:relative;
 }
 
-.image{
-    height:430px;
-    background:#dedbd4;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#777;
-    font-size:11px;
-    letter-spacing:2px;
+.product-image{
+    height:520px;
+    background:#ded9d0;
+    overflow:hidden;
+    position:relative;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
 }
 
 .badge{
     position:absolute;
-    top:12px;
-    left:12px;
+    top:15px;
+    left:15px;
     background:#111;
     color:white;
-    padding:7px 10px;
-    font-size:10px;
+    padding:9px 12px;
+    font-size:9px;
     letter-spacing:1px;
+    z-index:2;
 }
 
 .badge.out{
-    background:#b00020;
+    background:#d90000;
 }
 
-.info{
-    padding:15px 2px;
+.product-info{
+    padding:15px 0 35px;
 }
 
-.info h3{
-    font-size:14px;
-    margin-bottom:7px;
+.product-name{
+    font-size:15px;
+    font-weight:bold;
 }
 
-.info p{
-    color:#555;
-    font-size:13px;
+.product-meta{
+    display:flex;
+    justify-content:space-between;
+    margin-top:7px;
+    font-size:12px;
+}
+
+.price{
+    font-weight:bold;
+}
+
+.status{
+    color:#777;
+}
+
+.status.out{
+    color:#d00000;
+    font-weight:bold;
 }
 
 .product button{
     width:100%;
-    margin-top:12px;
-    padding:13px;
+    margin-top:15px;
+    padding:14px;
     border:1px solid #111;
     background:#111;
     color:white;
     cursor:pointer;
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.product button:hover{
+    background:#333;
 }
 
 .product button:disabled{
-    background:#ddd;
-    color:#777;
-    border-color:#ddd;
+    background:#ccc;
+    color:#666;
+    border-color:#ccc;
     cursor:not-allowed;
 }
 
-.empty{
-    display:none;
-    padding:80px 20px;
-    text-align:center;
-    color:#777;
-}
+/* FOOTER */
 
 footer{
-    background:#111;
-    color:white;
-    padding:60px 30px;
-    margin-top:60px;
+    border-top:1px solid #111;
+    padding:50px 30px;
 }
 
 .footer{
@@ -194,83 +234,83 @@ footer{
 }
 
 .footer h3{
-    font-size:25px;
+    font-size:22px;
 }
 
 .footer h4{
-    font-size:11px;
+    font-size:10px;
     letter-spacing:2px;
-    margin-bottom:15px;
+    margin-bottom:12px;
 }
 
 .footer p,
 .footer a{
-    color:#aaa;
-    font-size:13px;
-    line-height:2;
+    font-size:11px;
+    line-height:1.7;
 }
 
-@media(max-width:900px){
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .nav{
+        height:70px;
+        padding:0 18px;
+    }
+
+    .hamb{
+        display:block;
+        font-size:20px;
+    }
+
+    .links{
+        display:none;
+    }
+
+    .logo{
+        font-size:21px;
+    }
+
+    .hero{
+        padding:50px 18px 35px;
+    }
+
+    .hero h1{
+        font-size:65px;
+        letter-spacing:-4px;
+    }
+
+    .filters{
+        padding:15px 18px;
+    }
 
     .products{
-        grid-template-columns:repeat(2,1fr);
+        padding:0 18px;
+        grid-template-columns:1fr 1fr;
+        gap:14px;
+        margin-top:30px;
     }
 
-    .image{
-        height:330px;
+    .product-image{
+        height:300px;
     }
 
-    .top h1{
-        font-size:50px;
+    .product-name{
+        font-size:12px;
+    }
+
+    .product-meta{
+        display:block;
+        line-height:1.6;
+    }
+
+    .product button{
+        font-size:9px;
+        padding:12px 5px;
     }
 
     .footer{
         grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:550px){
-
-    .nav{
-        padding:0 18px;
-    }
-
-    .logo{
-        font-size:20px;
-    }
-
-    .navlinks{
-        gap:10px;
-        font-size:11px;
-    }
-
-    .wrap{
-        padding:45px 18px;
-    }
-
-    .top{
-        display:block;
-    }
-
-    .top h1{
-        font-size:45px;
-        margin-bottom:10px;
-    }
-
-    .tools{
-        flex-direction:column;
-    }
-
-    .products{
-        gap:12px;
-    }
-
-    .image{
-        height:240px;
-    }
-
-    .footer{
-        grid-template-columns:1fr;
     }
 }
 </style>
@@ -279,158 +319,292 @@ footer{
 <body>
 
 <header>
+    <div class="nav">
 
-<nav class="nav">
+        <div class="hamb">☰</div>
 
-<a href="index.html" class="logo">
-PLUGSTORE
-</a>
+        <div class="links">
+            <a href="index.html">Accueil</a>
+            <a href="shop.html">Shop</a>
+        </div>
 
-<div class="navlinks">
-<a href="index.html">ACCUEIL</a>
-<a href="shop.html">SHOP</a>
-<a href="checkout.html" class="bag">
-BAG (<span id="bagCount">0</span>)
-</a>
-</div>
+        <a href="index.html">
+            <div class="logo">PLUGSTORE</div>
+            <div class="micro">CURATED FASHION</div>
+        </a>
 
-</nav>
+        <div class="links">
+            <a href="#">♡</a>
+            <a href="checkout.html">Bag (0)</a>
+        </div>
 
+    </div>
 </header>
 
 
-<main class="wrap">
+<main>
 
-<div class="top">
+<section class="hero">
+    <small>PLUGSTORE / COLLECTION</small>
 
-<div>
-<p>PLUGSTORE / 001</p>
-<h1>SHOP</h1>
-</div>
+    <h1>THE<br>SHOP</h1>
 
-<p>
-CURATED FASHION<br>
-ABIDJAN · CÔTE D'IVOIRE
-</p>
-
-</div>
+    <p>
+        Une sélection de pièces uniques,
+        soigneusement choisies pour PLUGSTORE.
+        Chaque pièce peut disparaître à tout moment.
+    </p>
+</section>
 
 
-<div class="tools">
+<div class="filters">
 
-<input
-type="text"
-id="search"
-class="search"
-placeholder="Rechercher une pièce..."
->
+    <span>COLLECTION / 06 PIECES</span>
 
-<select id="filter">
-<option value="all">Toutes les pièces</option>
-<option value="available">Disponibles</option>
-<option value="out">Rupture de stock</option>
-</select>
+    <select>
+        <option>TRIER PAR</option>
+        <option>Nouveautés</option>
+        <option>Prix croissant</option>
+        <option>Prix décroissant</option>
+    </select>
 
 </div>
 
 
-<div class="products" id="products">
+<section class="products">
 
 
-<div class="product" data-name="Plug Piece 001" data-status="available">
+<!-- PRODUIT 1 -->
 
-<div class="badge">
-AVAILABLE
-</div>
+<article class="product">
 
-<div class="image">
-PRODUCT IMAGE 01
-</div>
+    <div class="product-image">
 
-<div class="info">
-<h3>PLUG PIECE 001</h3>
-<p>12 000 FCFA</p>
+        <span class="badge">NEW</span>
 
-<button onclick="addToCart('PLUG PIECE 001',12000)">
-AJOUTER AU PANIER →
-</button>
-</div>
+        <img src="produit-1-1.jpeg" alt="Produit 1">
 
-</div>
+    </div>
 
+    <div class="product-info">
 
-<div class="product" data-name="Plug Piece 002" data-status="available">
+        <div class="product-name">
+            PLUG ARCHIVE 001
+        </div>
 
-<div class="badge">
-AVAILABLE
-</div>
+        <div class="product-meta">
 
-<div class="image">
-PRODUCT IMAGE 02
-</div>
+            <span class="price">
+                12 000 FCFA
+            </span>
 
-<div class="info">
-<h3>PLUG PIECE 002</h3>
-<p>15 000 FCFA</p>
+            <span class="status">
+                Disponible
+            </span>
 
-<button onclick="addToCart('PLUG PIECE 002',15000)">
-AJOUTER AU PANIER →
-</button>
-</div>
+        </div>
 
-</div>
+        <button onclick="addToBag('PLUG ARCHIVE 001',12000)">
+            Ajouter au panier
+        </button>
+
+    </div>
+
+</article>
 
 
-<div class="product" data-name="Plug Piece 003" data-status="out">
+<!-- PRODUIT 2 -->
 
-<div class="badge out">
-RUPTURE
-</div>
+<article class="product">
 
-<div class="image">
-PRODUCT IMAGE 03
-</div>
+    <div class="product-image">
 
-<div class="info">
-<h3>PLUG PIECE 003</h3>
-<p>18 000 FCFA</p>
+        <span class="badge">ARCHIVE</span>
 
-<button disabled>
-RUPTURE DE STOCK
-</button>
-</div>
+        <img src="produit-2-1.jpeg" alt="Produit 2">
 
-</div>
+    </div>
 
+    <div class="product-info">
 
-<div class="product" data-name="Plug Piece 004" data-status="available">
+        <div class="product-name">
+            PLUG ARCHIVE 002
+        </div>
 
-<div class="badge">
-AVAILABLE
-</div>
+        <div class="product-meta">
 
-<div class="image">
-PRODUCT IMAGE 04
-</div>
+            <span class="price">
+                15 000 FCFA
+            </span>
 
-<div class="info">
-<h3>PLUG PIECE 004</h3>
-<p>20 000 FCFA</p>
+            <span class="status">
+                Disponible
+            </span>
 
-<button onclick="addToCart('PLUG PIECE 004',20000)">
-AJOUTER AU PANIER →
-</button>
-</div>
+        </div>
 
-</div>
+        <button onclick="addToBag('PLUG ARCHIVE 002',15000)">
+            Ajouter au panier
+        </button>
+
+    </div>
+
+</article>
 
 
-</div>
+<!-- PRODUIT 3 -->
+
+<article class="product">
+
+    <div class="product-image">
+
+        <span class="badge">LIMITED</span>
+
+        <img src="produit-3-1.jpeg" alt="Produit 3">
+
+    </div>
+
+    <div class="product-info">
+
+        <div class="product-name">
+            PLUG ARCHIVE 003
+        </div>
+
+        <div class="product-meta">
+
+            <span class="price">
+                18 000 FCFA
+            </span>
+
+            <span class="status">
+                Disponible
+            </span>
+
+        </div>
+
+        <button onclick="addToBag('PLUG ARCHIVE 003',18000)">
+            Ajouter au panier
+        </button>
+
+    </div>
+
+</article>
 
 
-<div class="empty" id="empty">
-Aucune pièce trouvée.
-</div>
+<!-- PRODUIT 4 -->
+
+<article class="product">
+
+    <div class="product-image">
+
+        <img src="produit-4-1.png" alt="Produit 4">
+
+    </div>
+
+    <div class="product-info">
+
+        <div class="product-name">
+            PLUG ARCHIVE 004
+        </div>
+
+        <div class="product-meta">
+
+            <span class="price">
+                20 000 FCFA
+            </span>
+
+            <span class="status">
+                Disponible
+            </span>
+
+        </div>
+
+        <button onclick="addToBag('PLUG ARCHIVE 004',20000)">
+            Ajouter au panier
+        </button>
+
+    </div>
+
+</article>
+
+
+<!-- PRODUIT 5 -->
+
+<article class="product">
+
+    <div class="product-image">
+
+        <img src="produit-5-1.jpeg" alt="Produit 5">
+
+    </div>
+
+    <div class="product-info">
+
+        <div class="product-name">
+            PLUG ARCHIVE 005
+        </div>
+
+        <div class="product-meta">
+
+            <span class="price">
+                22 000 FCFA
+            </span>
+
+            <span class="status">
+                Disponible
+            </span>
+
+        </div>
+
+        <button onclick="addToBag('PLUG ARCHIVE 005',22000)">
+            Ajouter au panier
+        </button>
+
+    </div>
+
+</article>
+
+
+<!-- PRODUIT 6 -->
+
+<article class="product">
+
+    <div class="product-image">
+
+        <span class="badge out">RUPTURE</span>
+
+        <img src="produit-1-2.jpeg" alt="Produit 6">
+
+    </div>
+
+    <div class="product-info">
+
+        <div class="product-name">
+            PLUG ARCHIVE 006
+        </div>
+
+        <div class="product-meta">
+
+            <span class="price">
+                25 000 FCFA
+            </span>
+
+            <span class="status out">
+                RUPTURE DE STOCK
+            </span>
+
+        </div>
+
+        <button disabled>
+            Rupture de stock
+        </button>
+
+    </div>
+
+</article>
+
+
+</section>
 
 </main>
 
@@ -439,28 +613,25 @@ Aucune pièce trouvée.
 
 <div class="footer">
 
-<div>
-<h3>PLUGSTORE</h3>
-<p>Curated fashion.<br>Unique pieces.</p>
-</div>
+    <div>
+        <h3>PLUGSTORE</h3>
+        <p>Curated fashion. Unique pieces.</p>
+    </div>
 
-<div>
-<h4>SHOP</h4>
-<a href="shop.html">Collection</a><br>
-<a href="index.html">Accueil</a>
-</div>
+    <div>
+        <h4>SHOP</h4>
+        <a href="shop.html">Collection</a>
+    </div>
 
-<div>
-<h4>PAYMENT</h4>
-<p>Wave</p>
-<p>Orange Money</p>
-</div>
+    <div>
+        <h4>PAYMENT</h4>
+        <p>Wave · Orange Money</p>
+    </div>
 
-<div>
-<h4>DELIVERY</h4>
-<p>Abidjan</p>
-<p>Côte d'Ivoire</p>
-</div>
+    <div>
+        <h4>DELIVERY</h4>
+        <p>Abidjan & Côte d'Ivoire</p>
+    </div>
 
 </div>
 
@@ -469,101 +640,20 @@ Aucune pièce trouvée.
 
 <script>
 
-let cart =
-JSON.parse(localStorage.getItem("plugstore_cart")) || [];
+function addToBag(name, price){
 
-function updateBag(){
+    let bag = JSON.parse(localStorage.getItem("plugstoreBag")) || [];
 
-document.getElementById("bagCount").textContent =
-cart.length;
+    bag.push({
+        name:name,
+        price:price
+    });
 
-}
+    localStorage.setItem("plugstoreBag",JSON.stringify(bag));
 
-function addToCart(name,price){
-
-cart.push({
-name:name,
-price:price
-});
-
-localStorage.setItem(
-"plugstore_cart",
-JSON.stringify(cart)
-);
-
-updateBag();
-
-alert("Produit ajouté au panier");
+    alert(name + " ajouté au panier 🛍️");
 
 }
-
-const search =
-document.getElementById("search");
-
-const filter =
-document.getElementById("filter");
-
-const products =
-document.querySelectorAll(".product");
-
-const empty =
-document.getElementById("empty");
-
-function filterProducts(){
-
-let text =
-search.value.toLowerCase();
-
-let status =
-filter.value;
-
-let visible = 0;
-
-products.forEach(product => {
-
-let name =
-product.dataset.name.toLowerCase();
-
-let productStatus =
-product.dataset.status;
-
-let matchName =
-name.includes(text);
-
-let matchStatus =
-status === "all" ||
-status === productStatus;
-
-if(matchName && matchStatus){
-
-product.style.display = "";
-
-visible++;
-
-}else{
-
-product.style.display = "none";
-
-}
-
-});
-
-empty.style.display =
-visible === 0 ? "block" : "none";
-
-}
-
-search.addEventListener(
-"input",
-filterProducts
-);
-
-filter.addEventListener(
-"change",
-filterProducts
-);
-
-updateBag();
 
 </script>
 
